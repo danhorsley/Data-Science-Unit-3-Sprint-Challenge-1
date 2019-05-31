@@ -55,3 +55,5 @@ class AcmeReportTests(unittest.TestCase):
             bool_second=(second_bit in (NOUNS))
             self.assertEqual(bool_first, True)
             self.assertEqual(bool_second, True)
+if __name__ == '__main__':
+    unittest.main()
