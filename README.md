@@ -274,10 +274,12 @@ career here, you'll have to answer the following:
 - We have an awful lot of computers here, and it gets pretty confusing with
   slightly different things running on all of them. How could containers help us
   improve this situation?
-  containers help you to test your programs in many environments in a quick 
-  and easy manner. it's like a virtual machine (i.e. installing a virtual
+  
+  Containers help you to test your programs in another or fixed environment 
+  in a quick and easy manner. it's like a virtual machine (i.e. installing a virtual
   mac operating system on linux pc) but cuts down on all the unnecessary
-  components of the virtual OS.  
+  components of the virtual OS.  Dockers which are a kind of container
+  automate the running of programs inside many different software containers.
 
 Answer both of these questions (baseline ~5 sentences) here in text.
 
