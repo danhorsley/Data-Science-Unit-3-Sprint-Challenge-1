@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import random
-
 class Product:
-
 
     def __init__(
             self,
@@ -26,15 +24,21 @@ class Product:
         return "Very stealable!"
         """
         try:
-            self.stealratio = self.price/self.weight
+            
+            self.stealratio = self.price / self.weight
             if self.stealratio < 0.5:
-                print("Not so stealable...")
+                a="Not so stealable..."
+                print(a)
             elif self.stealratio < 1 and self.stealratio >= 0.5:
-                print("Kinda stealable.")
+                a="Kinda stealable."
+                print(a)
             else:
-                print("Very stealable!")
+                a="Very stealable!"
+                print(a)
         except ValueError:
+            self.stealratio=None
             "Oops!  That was not a valid weight or price.  Try again..."
+        return a 
 
 
     def explode(self):
@@ -47,14 +51,18 @@ class Product:
         self.flamratio = self.flammability * self.weight
         try:
             if self.flamratio < 10:
-                print("...fizzle.")
+                b="...fizzle."
+                print(b)
             elif self.flamratio >= 10 and self.flamratio < 50:
-                print("...boom!")
+                b="...boom!"
+                print(b)
             else:
-                print("...BABOOM!!")
+                b="...BABOOM!!"
+                print(b)
         except ValueError:
             print("Oops! That was not a valid weight or\
                    flammability.  Try again...")
+        return b
 
 class BoxingGlove(Product):
     #import random
