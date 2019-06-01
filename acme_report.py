@@ -33,15 +33,30 @@ def inventory_report(product_list):
     """
     takes a list of products, and prints a "nice" summary
     """
+    details=[]
     for i in range(len(product_list)):
         prod = product_list[i]
-        print("------------------")
-        print(".product number", i+1)
-        print(".name :", prod.name)
-        print(".price :", prod.price)
-        print(".weight :", prod.weight)
-        print(".flammability :", round(prod.flammability, 2))
-        print(".identifier :", prod.identifier)
+        info = [prod.name, prod.price, prod.weight, prod.flammability]
+        details.append(info)
+    def av(l):
+        return round(sum(l)/len(l),2)
+    names = len(set([x[0] for x in details]))
+    prices = av([x[1] for x in details])
+    weights = av([x[2] for x in details])
+    flammability = av([x[3] for x in details])
+    scores = [names, prices, weights, flammability]
+    labels = ['no. unique names','average price','average weight','average flammability']
+    print("-------------------------------")
+    print(".Product Report")
+    print(".number of unique names :", names)
+    print(".average price :", prices)
+    print(".average weight :", weights)
+    print(".average flammability", flammability)
+    print("-------------------------------")
+
+    return_dict=dict(zip(labels, scores))
+ 
+    return return_dict
 
 if __name__ == '__main__':
     inventory_report(generate_products())
