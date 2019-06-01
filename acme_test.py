@@ -20,6 +20,7 @@ class AcmeProductTests(unittest.TestCase):
         and explode as they should."""
         prod = Product('Test Product')
         test_steal = prod.price / prod.weight
+        test_explode = prod.flammability * prod.weight
         
         if test_steal < 0.5:
             self.assertEqual(prod.stealability(), "Not so stealable...")
@@ -28,13 +29,13 @@ class AcmeProductTests(unittest.TestCase):
             self.assertEqual(prod.stealability(), "Kinda stealable.")
 
         else:
-            self.assertEqual(prod.explode(), "Very stealable!")
+            self.assertEqual(prod.stealability(), "Very stealable!")
 
         if test_explode < 10:
             self.assertEqual(prod.explode(), "...fizzle.")
 
         elif test_explode >= 10 and test_explode < 50:
-            self.assertEqual(prod.stealability(), "...boom!")
+            self.assertEqual(prod.explode(), "...boom!")
 
         else:
             self.assertEqual(prod.explode(), "...BABOOM!!")
@@ -55,5 +56,6 @@ class AcmeReportTests(unittest.TestCase):
             bool_second=(second_bit in (NOUNS))
             self.assertEqual(bool_first, True)
             self.assertEqual(bool_second, True)
+            
 if __name__ == '__main__':
     unittest.main()
